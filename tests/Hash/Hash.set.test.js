@@ -1,10 +1,10 @@
-const object = require("../src/object.js");
+const Hash = require("../../src/Hash.js");
 
 test("object set: set property of an object (first level)", () => {
   const input = { a: 1, b: 2, c: 3 };
   const expected = { a: 1, b: 2, c: 300 };
 
-  const got = object.set(input, "c", 300);
+  const got = Hash.set(input, "c", 300);
   expect(got).toEqual(expected);
 });
 
@@ -39,7 +39,7 @@ test("object set: set property of an object (nested level)", () => {
     },
   };
 
-  const got = object.set(input, "location.area.country.city", "Example");
+  const got = Hash.set(input, "location.area.country.city", "Example");
   expect(got).toEqual(expected);
 });
 
@@ -47,7 +47,7 @@ test("object set: exception on invalid object argument", () => {
   const input = 400;
 
   expect(() => {
-    object.set(input, "a", 4);
+    Hash.set(input, "a", 4);
   }).toThrow();
 });
 
@@ -55,6 +55,6 @@ test("object set: exception on invalid object argument", () => {
   const input = { a: 1, b: 2, c: 3 };
 
   expect(() => {
-    object.set(input, 5, "something");
+    Hash.set(input, 5, "something");
   }).toThrow();
 });

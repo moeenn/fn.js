@@ -1,4 +1,4 @@
-const array = require("../src/array.js");
+const array = require("../../src/List.js");
 
 test("array every: check if all numbers are greater than 5", () => {
   const input = [10, 20, 30, 40, 50];

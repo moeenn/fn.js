@@ -1,4 +1,4 @@
-const array = require("../src/array.js");
+const array = require("../../src/List.js");
 
 test("array push: check if items are pushed", () => {
   const input = [1, 2, 3, 4];

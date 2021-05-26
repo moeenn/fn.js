@@ -1,10 +1,10 @@
-const object = require("../src/object.js");
+const Hash = require("../../src/Hash.js");
 
 test("object freeze: immutability of frozen object (simple)", () => {
   const input = { a: 1, b: 2, c: 3 };
   const expected = { a: 1, b: 2, c: 3 };
 
-  const got = object.freeze(input);
+  const got = Hash.freeze(input);
   expect(got).toEqual(expected);
 
   expect(() => (got.a = 400)).toThrow();
@@ -26,6 +26,6 @@ test("object freeze: immutability of frozen object (simple)", () => {
     },
   };
 
-  const got = object.freeze(input);
+  const got = Hash.freeze(input);
   expect(() => (got.location.area.country.city = 400)).toThrow();
 });

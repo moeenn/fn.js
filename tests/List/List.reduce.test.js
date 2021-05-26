@@ -1,4 +1,4 @@
-const array = require("../src/array.js");
+const array = require("../../src/List.js");
 
 test("array reduce: combine words into slug", () => {
   const input = ["sample", "article", "name", "random"];

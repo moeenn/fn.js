@@ -1,4 +1,4 @@
-const array = require("../src/array.js");
+const array = require("../../src/List.js");
 
 test("array map: check output length", () => {
   const input = [1, 2, 3, 4, 5];

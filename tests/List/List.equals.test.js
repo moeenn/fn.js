@@ -1,4 +1,4 @@
-const array = require("../src/array.js");
+const array = require("../../src/List.js");
 
 test("array equals: check if two array are same", () => {
   const input_1 = [1, 2, 3, 4, 5];

@@ -1,4 +1,4 @@
-const array = require("../src/array.js");
+const array = require("../../src/List.js");
 
 test("array is_array: check if valid", () => {
   const input = [1,2,3,4,5]

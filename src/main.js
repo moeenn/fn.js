@@ -1,5 +1,9 @@
-const array = require("./array.js");
-const object = require("./object.js");
+const List = require("./List.js");
+const Hash = require("./Hash.js");
+const Str = require("./Str.js");
+const Num = require("./Num.js");
 
-window.array = array;
-window.object = object;
+window.List = List;
+window.Hash = Hash;
+window.Str = Str;
+window.Num = Num;

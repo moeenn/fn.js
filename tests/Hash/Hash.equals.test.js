@@ -1,11 +1,11 @@
-const object = require("../src/object.js");
+const Hash = require("../../src/Hash.js");
 
 test("object equals: check if two ojects are same (simple)", () => {
   const input_1 = { a: 1, b: 2, c: 3 };
   const input_2 = { a: 1, b: 2, c: 3 };
   const expected = true;
 
-  const got = object.equals(input_1, input_2);
+  const got = Hash.equals(input_1, input_2);
   expect(got).toBe(expected);
 });
 
@@ -42,7 +42,7 @@ test("object equals: check if two ojects are same (complex)", () => {
 
   const expected = true;
 
-  const got = object.equals(input_1, input_2);
+  const got = Hash.equals(input_1, input_2);
   expect(got).toBe(expected);
 });
 
@@ -79,7 +79,7 @@ test("object equals: check if two ojects are same (key order difference)", () =>
 
   const expected = true;
 
-  const got = object.equals(input_1, input_2);
+  const got = Hash.equals(input_1, input_2);
   expect(got).toBe(expected);
 });
 
@@ -116,7 +116,7 @@ test("object equals: check if two ojects are not same (complex)", () => {
 
   const expected = false;
 
-  const got = object.equals(input_1, input_2);
+  const got = Hash.equals(input_1, input_2);
   expect(got).toBe(expected);
 });
 
@@ -125,6 +125,6 @@ test("object equals: exception thrown on invalid arguments", () => {
   const input_2 = [6, 7, 8, 9, 10];
 
   expect(() => {
-    object.equals(input_1, input_2);
+    Hash.equals(input_1, input_2);
   }).toThrow();
 });

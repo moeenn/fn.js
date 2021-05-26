@@ -1,4 +1,4 @@
-const object = require("../src/object.js");
+const Hash = require("../../src/Hash.js");
 
 test("object get: get first level property", () => {
   const input = {
@@ -17,7 +17,7 @@ test("object get: get first level property", () => {
   };
 
   const expected = "Some name";
-  const got = object.get(input, "name");
+  const got = Hash.get(input, "name");
 
   expect(got).toBe(expected);
 });
@@ -39,7 +39,7 @@ test("object get: get nested level property", () => {
   };
 
   const expected = "Sample";
-  const got = object.get(input, "location.area.country.city");
+  const got = Hash.get(input, "location.area.country.city");
 
   expect(got).toBe(expected);
 });
@@ -47,13 +47,13 @@ test("object get: get nested level property", () => {
 test("object get: exception on invalid object argument", () => {
   const input = [1, 2, 3, 4, 5];
   expect(() => {
-    object.get(input, "2");
+    Hash.get(input, "2");
   }).toThrow();
 });
 
 test("object get: exception on invalid property argument", () => {
   const input = { a: 1, b: 2, c: 3 };
   expect(() => {
-    object.get(input, 3);
+    Hash.get(input, 3);
   }).toThrow();
 });

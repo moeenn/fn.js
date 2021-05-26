@@ -1,4 +1,4 @@
-const object = require("../src/object.js");
+const Hash = require("../../src/Hash.js");
 
 test("object copy: correct object copy", () => {
   const input = {
@@ -31,7 +31,7 @@ test("object copy: correct object copy", () => {
     },
   };
 
-  const got = object.copy(input);
+  const got = Hash.copy(input);
   expect(got).toEqual(expected);
 });
 
@@ -66,14 +66,14 @@ test("object copy: correct object copy with changes", () => {
     },
   };
 
-  const got = object.copy(input);
+  const got = Hash.copy(input);
   expect(got).not.toEqual(expected);
 });
 
 test("object copy: check thrown exception", () => {
   const input = [1, 2, 3, 4];
   expect(() => {
-    object.copy(input);
+    Hash.copy(input);
   }).toThrow();
 });
 
@@ -108,7 +108,7 @@ test("object copy: check original array not mutated", () => {
     },
   };
 
-  const got = object.copy(input);
+  const got = Hash.copy(input);
   got.location.area.country.city = "Something";
 
   expect(input).toEqual(expected);

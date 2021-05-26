@@ -1,4 +1,4 @@
-const array = require("../src/array.js");
+const array = require("../../src/List.js");
 
 test("array filter: remove odd numbers from array", () => {
   const input = [5, 6, 7, 8, 9];
