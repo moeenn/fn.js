@@ -1,4 +1,4 @@
-const object = {
+const Hash = {
   is_object: function (object) {
     return (
       object !== null &&
@@ -124,4 +124,4 @@ const object = {
   },
 };
 
-module.exports = object;
+module.exports = Hash;
