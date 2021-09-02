@@ -1,4 +1,4 @@
-const Hash = require("../../src/Hash.js");
+import Hash from "../../src/Hash.mjs";
 
 test("object equals: check if two ojects are same (simple)", () => {
   const input_1 = { a: 1, b: 2, c: 3 };

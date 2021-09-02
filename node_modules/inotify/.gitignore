@@ -1,0 +1,7 @@
+.vagrant
+.vscode
+node_modules
+build
+*.swp
+*.swo
+*.swn

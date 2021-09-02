@@ -1,4 +1,4 @@
-const array = require("../../src/List.js");
+import List from "../../src/List.mjs";
 
 test("array reduce: combine words into slug", () => {
   const input = ["sample", "article", "name", "random"];
@@ -9,7 +9,7 @@ test("array reduce: combine words into slug", () => {
     return `${accum}-${current}`;
   };
 
-  const got = array.reduce(input, reducer, "");
+  const got = List.reduce(input, reducer, "");
   expect(got).toBe(expected);
 });
 
@@ -21,7 +21,7 @@ test("array reduce: sum all numbers", () => {
     return accum + current;
   };
 
-  const got = array.reduce(input, reducer, 0);
+  const got = List.reduce(input, reducer, 0);
   expect(got).toBe(expected);
 });
 
@@ -31,7 +31,7 @@ test("array reduce: exception on invalid array argument", () => {
   const init = 0;
 
   expect(() => {
-    array.reduce(input, reducer, init);
+    List.reduce(input, reducer, init);
   }).toThrow();
 });
 
@@ -41,7 +41,7 @@ test("array reduce: exception on invalid reducer function", () => {
   const init = 0;
 
   expect(() => {
-    array.reduce(input, reducer, init);
+    List.reduce(input, reducer, init);
   }).toThrow();
 });
 
@@ -51,7 +51,7 @@ test("array reduce: exception on all invalid arguments", () => {
   const init = "a";
 
   expect(() => {
-    array.reduce(input, reducer, init);
+    List.reduce(input, reducer, init);
   }).toThrow();
 });
 

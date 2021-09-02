@@ -1,4 +1,4 @@
-const Hash = require("../../src/Hash.js");
+import Hash from "../../src/Hash.mjs";
 
 test("object freeze: immutability of frozen object (simple)", () => {
   const input = { a: 1, b: 2, c: 3 };

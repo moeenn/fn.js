@@ -1,10 +1,10 @@
-const array = require("../../src/List.js");
+import List from "../../src/List.mjs";
 
 test("array filter: remove odd numbers from array", () => {
   const input = [5, 6, 7, 8, 9];
   const expected = [6, 8];
 
-  const got = array.filter(input, (n) => n % 2 === 0);
+  const got = List.filter(input, (n) => n % 2 === 0);
   expect(got).toEqual(expected);
 });
 
@@ -12,7 +12,7 @@ test("array filter: remove words longer than 3 characters", () => {
   const input = ["cat", "city", "dog", "alpine", "parrot", "lan"];
   const expected = ["cat", "dog", "lan"];
 
-  const got = array.filter(input, (word) => word.length <= 3);
+  const got = List.filter(input, (word) => word.length <= 3);
   expect(got).toEqual(expected);
 });
 
@@ -21,7 +21,7 @@ test("array filter: exception on invalid array", () => {
   const callback = (n) => n > 2;
 
   expect(() => {
-    array.filter(input, callback);
+    List.filter(input, callback);
   }).toThrow();
 });
 
@@ -30,7 +30,7 @@ test("array filter: exception on invalid callback type", () => {
   const callback = "something";
 
   expect(() => {
-    array.filter(input, callback);
+    List.filter(input, callback);
   }).toThrow();
 });
 
@@ -39,6 +39,6 @@ test("array filter: exception on all invalid arguments", () => {
   const callback = "something";
 
   expect(() => {
-    array.filter(input, callback);
+    List.filter(input, callback);
   }).toThrow();
 });

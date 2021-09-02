@@ -1,4 +1,4 @@
-const Hash = require("../../src/Hash.js");
+import Hash from "../../src/Hash.mjs";
 
 test("object get: get first level property", () => {
   const input = {

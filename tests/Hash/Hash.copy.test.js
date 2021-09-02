@@ -1,4 +1,4 @@
-const Hash = require("../../src/Hash.js");
+import Hash from "../../src/Hash.mjs";
 
 test("object copy: correct object copy", () => {
   const input = {
