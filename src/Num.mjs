@@ -15,9 +15,14 @@ function isFloat(number) {
   return number % 1 !== 0;
 }
 
+function toString(number) {
+  return `${number}`;
+}
+
 export default {
   isNumber,
   isInt,
   isUint,
   isFloat,
+  toString,
 }

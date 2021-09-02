@@ -94,32 +94,16 @@ function get(object, property) {
   return result;
 }
 
-function set(object, property, value) {
+function mutate(object, mutator) {
   if (
     !isObject(object) ||
-    property.constructor !== String ||
-    value === null ||
-    value === undefined
+    mutator.constructor !== Function
   ) {
-    throw new Error("Invalid arguments for object get");
+    throw new Error("Invalid arguments for Hash.mutate");
   }
 
   const clone = copy(object);
-
-  const access_string = `clone.${property}`;
-  const result = eval(access_string);
-  if (!result) {
-    throw new Error(`Failed to find property object.${property}`);
-  }
-
-  const command =
-    value.constructor == String
-      ? `${access_string} = '${value}'`
-      : `${access_string} = ${value}`;
-
-  eval(command);
-
-  return clone;
+  return mutator(clone);
 }
 
 export default {
@@ -128,5 +112,5 @@ export default {
   equals,
   freeze,
   get,
-  set,
+  mutate,
 };
